@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CourseWork</title>
+</head>
+<body>
+    <h1>Course Work</h1>
+    <h2> <strong>{{ course_code }}</strong></h2>
+    <ul>
+        {% for key, value in coursework.items() %}
+            <li>
+                <p><strong>{{ key }}</strong>
+                    {% for item in value %}
+                    <li>
+                            {{ item }} : {{value[item]}}%
+                    </li>
+                    {% endfor %}
+                </p>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>
