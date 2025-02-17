@@ -1,5 +1,5 @@
 
-app = "course_hunt"
+app = "course-hunt"
 
 [build]
   builder = "docker"
