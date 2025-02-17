@@ -1,6 +1,0 @@
-
-app = "course-hunt"
-
-[build]
-  builder = "docker"
-
