@@ -71,7 +71,6 @@ def check_var(commentlist, checkdict):
             pos = True
             for token in clause:
                 if token.lemma_ in checkdict:
-                    print(token)
                     check = token.lemma_
                 if token.dep_ == "neg":
                     pos = False
@@ -79,36 +78,17 @@ def check_var(commentlist, checkdict):
                 checkdict[check] += 1
     return 1
 
-def course_work_list(checkdict, categorydict, benchmark):
+
+def course_work_list(checkdict, benchmark):
     tempdict = {}
     for key, value in checkdict.items():
 
-        if value:
-            tempdict[key] = min(100, round((value/benchmark)*100))
-    #exams
-    if "final" in tempdict:
-        categorydict["Exams"]["final"] = 100
-    if "midterm" in tempdict or "test" in tempdict:
-        categorydict["Exams"]["midterm"] = max(tempdict["midterm"],tempdict["test"],86)
+        temp_value = min(100,round((value/benchmark)*100))
 
-    #assignments
-    for item in ["assignment","quiz","lab"]:
-        if item in tempdict:
-            categorydict["Assignments"][item] = tempdict[item]
+        if temp_value > 50:
+            tempdict[key] = temp_value
 
-    #projects
-    for item in ["presentation","group","project","essay","research"]:
-        if item in tempdict:
-            if item == "group":
-                categorydict["Projects"][item+" work"] = tempdict[item]
-            categorydict["Projects"][item] = tempdict[item]
-
-    finaldict = {}
-    for key, value in categorydict.items():
-        if value:
-            finaldict[key] = value
-
-    return finaldict
+    return tempdict
 
 
 
