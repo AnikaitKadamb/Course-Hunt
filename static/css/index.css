@@ -1,0 +1,68 @@
+body{
+  height: 100%;
+}
+
+.side{
+
+    width: 100%;
+    height:100%;
+    display: grid;
+    place-items: center;
+
+    overflow: hidden;
+    position: absolute;
+
+  }
+
+  .side .title{
+
+    color: white;
+    font-size: 8vw;
+    width: 70vw;
+  }
+
+
+  #left-side{
+    background-color: #E1CDB5;
+    z-index: 2;
+  }
+
+  #right-side{
+    background-color: #011936;
+  }
+
+  .grid-container{
+      display: grid;
+      place-items: center;
+      height: 50vh;
+      margin: 0;
+      transform: translateX(-50%);
+  }
+
+
+  .side .fill{
+    color: white;
+    font-size: 4vw;
+    width: 70vw;
+
+  }
+
+  .side .fill input[type="text"]{
+    background-color:#E1CDB5;
+    width: 50%;
+    padding: 30px;
+    border-radius:10px;
+    transform: translateX(40%);
+
+  }
+
+  button[type="submit"]{
+    padding: 20px;
+    border-radius: 10px;
+    background-color: aliceblue;
+  }
+
+
+
+
+

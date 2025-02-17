@@ -1,0 +1,38 @@
+body{
+    height: 100vh;
+    background-color: #011936;
+    color: white;
+}
+
+.whitebox{
+    margin-left: 50px;
+    background: white;
+    color: #011936;
+    padding: 10px 20px;
+    border: 2px solid #011936;
+    border-radius: 10px;
+    width: 60%;
+}
+
+tr{
+  font-size: 20px;
+  text-align: center;
+}
+
+td{
+  font-size: 80%;
+  text-align: center;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  position: fixed;
+  bottom:0;
+  left:50%;
+  transform: translateX(-50%);
+  width: auto;
+  padding-bottom: 20px;
+}

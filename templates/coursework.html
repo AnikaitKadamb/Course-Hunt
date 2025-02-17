@@ -3,24 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/coursework.css') }}">
     <title>CourseWork</title>
 </head>
+
 <body>
-    <h1>Course Work</h1>
     <h2> <strong>{{ course_code }}</strong></h2>
-    <ul>
-        {% for key, value in coursework.items() %}
-            <li>
-                <p><strong>{{ key }}</strong>
-                    {% for item in value %}
-                    <li>
-                            {{ item }} : {{value[item]}}%
-                    </li>
-                    {% endfor %}
-                </p>
-            </li>
-        {% endfor %}
-    </ul>
-    <a href="/">Back to Home</a>
+    <div class = "whitebox">
+        <table>
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Likelihood</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for key, value in coursework.items() %}
+                    <tr>
+                        <td> {{ key }}</td>
+                        <td>{{ value }}%</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <a href="/"class="end">Back to Home</a>
 </body>
+
+
 </html>

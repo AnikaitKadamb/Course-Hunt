@@ -3,15 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reddit University</title>
-    <link rel="stylesheet" href="/styles/index.css">
+    <title>Course Hunt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
 </head>
 <body>
-    <h1>Search UTSC Course</h1>
-    <form action="/coursesearch" method="post">
-        <label for="course_code">Enter Course Code:</label>
+
+    <div id="left-side" class="side">
+        <h1 class ="title"> Course Hunt</h1>
+    </div>
+
+    <div id="right-side" class="side">
+      <form action="/coursesearch" method="post" class ="fill">
+        <center><h3>Enter Course Code</h3></center>
+        <label for="course_code"></label>
         <input type="text" id="course_code" name="course_code" required>
-        <button type="submit">Search</button>
-    </form>
+        <button type="submit">Click Me!</button>
+      </form>
+    </div>
+    <script src = "{{url_for('static',filename='js/index.js') }}"></script>
 </body>
 </html>

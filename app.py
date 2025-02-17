@@ -1,5 +1,5 @@
 import operations
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template, jsonify, url_for
 
 app = Flask(__name__)
 
@@ -37,9 +37,9 @@ def search():
 
 
     end = operations.check_var(commentlist, checkdict)
-    benchmark = (max(checkdict.values()) - (min(checkdict.values())+1))/2
+    benchmark = round((max(checkdict.values()) - (min(checkdict.values())+1))/2)
     course_work = {}
-    course_work = operations.course_work_list(checkdict,categorydict,benchmark)
+    course_work = operations.course_work_list(checkdict,benchmark)
     if end == 0:
         return render_template("coursework.html",coursework = course_work, course_code = course_code)
     operations.set_null_dict(checkdict,0)
